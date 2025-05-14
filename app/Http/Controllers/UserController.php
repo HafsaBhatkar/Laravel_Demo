@@ -3,25 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
+use Illuminate\Validation\Rules\Exists;
 
 class UserController extends Controller
 {
     //
-    function getUsers(){
-        return view("user");
-        // return "Hafsa Bhatkar";
+
+    function userAbout($name){
+        return view('about', ['user' => $name]);
     }
 
-    function aboutUsers(){
-        return "Hello this is info about the users";
+    function userHome(){
+        return view('home');
     }
 
-    function getuserName($name){
-        // return "Hello this is " . $name;
-        return view("getUser", ["name" => $name]);
+    function adminLogin(){
+        return view('admin.login');
     }
 
-    function adminLogin($name){
-        return view("admin.login", ["name"=> $name]);
+    // To check if a View exists
+    function adminExists(){
+        // if(view :: exists('signup.login'))
+        if(view :: exists('admin.login')){
+            return view('admin.login');
+        }
+        echo "<h1>Not Found<h1>";
     }
 }

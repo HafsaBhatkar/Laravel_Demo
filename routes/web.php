@@ -7,19 +7,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route :: view('/index', 'index');
+// Static View
+Route :: get('/home', function(){
+    return view('home');
+});
+Route :: view ('/admin', 'admin.login');
 
-Route :: get('/about/{name}', function($name){
-    // echo $name;
-    // return view('about');
-    return view('about', ['name' => $name]);
+Route :: get('/about-static/{name}', function($name){
+    return view('about', ['user' => $name]);
 });
 
-// Redirecting
-Route :: redirect('/about/', '/index');
 
-Route ::get ('/user', [UserController :: class, 'getUsers']);
-Route :: get('/aboutUser', [UserController :: class, 'aboutUsers']);
-Route :: get('/getUserName/{name}', [UserController :: class, 'getUserName']);
+// Calling view using controller
+Route :: get('/about/{name}', [UserController::class,'userAbout']);
 
-Route :: get('/adminLogin/{name}', [UserController :: class,'adminLogin']);
+Route :: get('/home', [UserController :: class, 'userHome']);
+
+Route :: get('/adminLogin', [UserController :: class, 'adminLogin']);
+
+Route :: get ('/adminExists', [UserController::class,'adminExists']);
