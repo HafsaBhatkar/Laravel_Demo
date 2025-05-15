@@ -7,5 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route :: view('home', 'home');
 
-Route :: get('user-home', [UserController::class,'userHome']);
+Route :: view('about', 'about');
+
+// Route :: get('user-home', [UserController::class,'userHome']);
+
+Route :: get('/about/{name}', [UserController :: class, 'getAbout']);
