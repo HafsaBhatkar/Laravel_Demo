@@ -7,8 +7,12 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
-    function save(){
+    function add(){
         return "Add Student";
+    }
+
+    function getName($name){
+        return view("home",["name"=>$name]);
     }
 
     function show(){
