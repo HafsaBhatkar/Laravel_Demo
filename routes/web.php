@@ -8,11 +8,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('home/user/profile','home')->name('hm');
-
-Route::view('home/profile/{name}','home')->name('user');
+Route::view('home/user/profile', 'home')->name('hm');
 
 
-Route::get('show', [HomeController::class, 'show']);
-Route::get('user', [HomeController::class, 'user']);
+
+Route::prefix('student')->group(function () {
+    Route::view('/home', 'home');
+    Route::get('/show', [HomeController::class, 'show']);
+    Route::get('/save', [HomeController::class, 'save']);
+});
 
