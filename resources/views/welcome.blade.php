@@ -1,3 +1,7 @@
-<h1>Welcome Page</h1>
-<p>{{ $path }}</p>
-<img src="{{ 'storage/uploads/'.$path }}" alt="" srcset="" height="100%">
+<h1>{{ __('welcome.heading1') }}</h1>
+
+<h3>{{__('welcome.subHeading')}}</h3>
+<a href="about">{{ __('welcome.about') }}</a>
+<a href="about">{{ __('welcome.home') }}</a>
+<a href="about">{{ __('welcome.contact') }}</a>
+
