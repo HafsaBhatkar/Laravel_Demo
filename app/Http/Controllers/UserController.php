@@ -8,36 +8,18 @@ class UserController extends Controller
 {
     //
 
-    public function get(){
-        return "GET Method";
-    }
+    function login(Request $req){
+        // echo "<pre>";
+        echo $req->path();
+        echo $req->url();
+        echo $req->ip();
 
-    public function post(){
-        return "POST Method";
-    }
+        // All input fields
+        print_r($req->all());
+        // OR
+        print_r($req->collect());
 
-    public function put(){
-        return "PUT Method";
-    }
-
-    public function patch(){
-        return "PATCH Method";
-    }
-
-    public function delete(){
-        return "DELETE Method";
-    }
-
-    public function any(){ 
-        return "ANY Method";
-    }
-
-    public function group1(){ 
-        return "POST AND PUT";
-    }
-
-     public function group2(){ 
-        return "PATCH AND DELETE";
+        // echo "</pre>";
     }
 
 }
