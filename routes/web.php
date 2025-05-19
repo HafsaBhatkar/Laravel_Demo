@@ -2,14 +2,12 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('login', 'login');
-Route::get('profile', [UserController::class,'profile']);
+Route::view('upload', 'upload');
+Route::post('upload', [UploadController::class,'upload']);
 
-Route::post('login', [UserController::class,'login']);
-Route::get('logout', [UserController::class,'logout']);
