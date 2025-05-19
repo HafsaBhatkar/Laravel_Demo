@@ -2,7 +2,7 @@
     <h1>User</h1>
    <form action="users" method="post">
         @csrf
-        <input type="hidden" name="_method" value="DELETE">
+        <input type="hidden" name="_method" value="put">
         <div>
             <input type="text" name="name" placeholder="Enter your name" value="{{ old('name') }}">
         </div>

@@ -27,4 +27,17 @@ class UserController extends Controller
     public function delete(){
         return "DELETE Method";
     }
+
+    public function any(){ 
+        return "ANY Method";
+    }
+
+    public function group1(){ 
+        return "POST AND PUT";
+    }
+
+     public function group2(){ 
+        return "PATCH AND DELETE";
+    }
+
 }
