@@ -8,6 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('users', [UserController::class,'login']);
+Route::view('login', 'login');
+Route::get('profile', [UserController::class,'profile']);
 
-Route::view('form', 'user');
+Route::post('login', [UserController::class,'login']);
+Route::get('logout', [UserController::class,'logout']);
